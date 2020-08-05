@@ -14,14 +14,9 @@ namespace InternshipTest.Institution.InterLink
             this.name = name;      
         }
 
-        public void AddIntern(Student student, University university)
+        public void AddInterns(University university)
         {
-            int studentGrade = student.GetKnowledge().getLevel();
-            double avarageGrade = university.getAverageGrade();
-
-            if (studentGrade >= avarageGrade) {
-                interns.Add(student);
-            }
+            interns.AddRange(university.getBestStudents());
         }
 
         public string GetInterns()

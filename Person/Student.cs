@@ -5,13 +5,9 @@ namespace InternshipTest.Person
         private string name;
         private Knowledge knowledge;
 
-        public Student(string name)
+        public Student(string name, Knowledge knowledge)
         {
             this.name = name;
-        }
-
-        public void SetKnowledge(Knowledge knowledge)
-        {
             this.knowledge = knowledge;
         }
 

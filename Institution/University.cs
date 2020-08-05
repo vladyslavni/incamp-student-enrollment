@@ -20,7 +20,14 @@ namespace InternshipTest.Institution
             students.Add(student);
         }
 
-        public double getAverageGrade()
+        public List<Student> getBestStudents() 
+        {
+            double averageGrade = getAverageGrade();
+            
+            return students.FindAll(student => student.GetKnowledge().getLevel() >= averageGrade);
+        }
+        
+        private double getAverageGrade()
         {
             int studentsCount = students.Count();
             double studentGradesSum = students.Sum(student => student.GetKnowledge().getLevel());

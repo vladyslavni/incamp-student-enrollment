@@ -9,13 +9,9 @@ namespace InternshipTest
     {
         static void Main(string[] args)
         {
-            var student1 = new Student("Bob");
-            var student2 = new Student("Martin");
-            var student3 = new Student("Alex");
-
-            student1.SetKnowledge(new Knowledge(1));
-            student2.SetKnowledge(new Knowledge(5));
-            student3.SetKnowledge(new Knowledge(4));
+            var student1 = new Student("Bob", new Knowledge(1));
+            var student2 = new Student("Martin", new Knowledge(5));
+            var student3 = new Student("Alex", new Knowledge(4));
 
             University university = new University("CH.U.I.");
             university.AddStudent(student1);
@@ -23,9 +19,7 @@ namespace InternshipTest
             university.AddStudent(student3);
 
             Internship internship = new Internship("Interlink");
-            internship.AddIntern(student1, university);
-            internship.AddIntern(student2, university);
-            internship.AddIntern(student3, university);
+            internship.AddInterns(university);
 
             Console.WriteLine("List of internship's students:");
             Console.WriteLine(internship.GetInterns());
